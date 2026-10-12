@@ -53,7 +53,21 @@
     .memory p{margin:0;color:#916779;font-size:13px;line-height:1.65}
     .photo-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
     .photo{aspect-ratio:4/5;border:2px dashed #ed91b4;border-radius:20px;background:linear-gradient(145deg,#fff8fb,#ffdce9);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:13px;color:#bd4e7a;overflow:hidden;position:relative}
-    .photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:none}
+    .photo img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+.photo .photo-label{
+  position:relative;
+  z-index:1;
+  background:rgba(255,255,255,0.85);
+  padding:10px;
+  border-radius:12px;
+}
     .photo .ph-emoji{font-size:34px;margin-bottom:9px}
     .photo strong{font-size:13px}
     .photo small{font-size:11px;line-height:1.5;margin-top:6px;color:#a86d85}
@@ -149,7 +163,7 @@ Happy Birthday once again, my princess. May your wishes come true, one by one. ð
 
   <div class="photo-grid">
 
-    <div class="photo">
+    <div class="photo has-image">
       <img src="photo1.jpg.jpg" alt="Our first memory">
       <span class="photo-label">
         <span class="ph-emoji">ðŸŒ¸</span>
@@ -157,7 +171,7 @@ Happy Birthday once again, my princess. May your wishes come true, one by one. ð
       </span>
     </div>
 
-    <div class="photo">
+    <div class="photo has-image">
       <img src="photo2.jpg.jpg" alt="A favourite picture">
       <span class="photo-label">
         <span class="ph-emoji">ðŸ’ž</span>
@@ -165,7 +179,7 @@ Happy Birthday once again, my princess. May your wishes come true, one by one. ð
       </span>
     </div>
 
-    <div class="photo">
+    <div class="photo has-image">
       <img src="photo3.jpg.jpg" alt="A happy moment">
       <span class="photo-label">
         <span class="ph-emoji">ðŸŒ·</span>
@@ -173,7 +187,7 @@ Happy Birthday once again, my princess. May your wishes come true, one by one. ð
       </span>
     </div>
 
-    <div class="photo">
+    <div class="photo has-image">
       <img src="photo4.jpg.jpg" alt="A silly memory">
       <span class="photo-label">
         <span class="ph-emoji">ðŸ¥¹</span>
@@ -181,7 +195,7 @@ Happy Birthday once again, my princess. May your wishes come true, one by one. ð
       </span>
     </div>
 
-    <div class="photo">
+    <div class="photo has-image">
       <img src="photo5.jpg.jpg" alt="A special day">
       <span class="photo-label">
         <span class="ph-emoji">ðŸŽ€</span>
@@ -189,7 +203,7 @@ Happy Birthday once again, my princess. May your wishes come true, one by one. ð
       </span>
     </div>
 
-    <div class="photo">
+    <div class="photo has-image">
       <img src="photo6.jpg.jpg" alt="More memories">
       <span class="photo-label">
         <span class="ph-emoji">ðŸ’—</span>
