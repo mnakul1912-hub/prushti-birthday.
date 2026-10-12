@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#ffe3ee" />
+  <meta name="description" content="A little birthday world made with love for Prushti." />
+  <title>Happy Birthday, Prushti! 💗</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--pink:#ff6f9f;--hot:#ed3979;--rose:#a42b58;--cream:#fff9fb;--ink:#54243a;--muted:#916779;--glass:rgba(255,255,255,.78)}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:radial-gradient(circle at 10% 0%,#fff 0,#ffe8f0 36%,#ffd5e4 100%);color:var(--ink);font-family:"DM Sans",sans-serif;overflow-x:hidden}
+    button,a{font:inherit}
+    button{cursor:pointer}
+    .petals,.hearts{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+    .petal{position:absolute;top:-35px;opacity:.6;animation:fall linear infinite;font-size:18px}
+    @keyframes fall{to{transform:translate3d(var(--drift),110vh,0) rotate(420deg);opacity:.08}}
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+    @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+    @keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+    .wrap{position:relative;z-index:1;width:min(100% - 28px,760px);margin:auto}
+    .topbar{display:flex;justify-content:space-between;align-items:center;padding:17px 0}
+    .brand{font-family:"Playfair Display",serif;font-weight:700;letter-spacing:.2px}
+    .music-btn{border:1px solid #f3a8c3;background:#ffffffb8;color:var(--rose);border-radius:999px;padding:10px 13px;font-size:13px;font-weight:700;box-shadow:0 5px 20px #d84c7b12}
+    .hero{min-height:83svh;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px 0 42px}
+    .hero-card{width:100%;padding:32px 20px 28px;border:1px solid #fff9;border-radius:32px;background:linear-gradient(145deg,#ffffffb8,#fff0f6b8);box-shadow:0 22px 70px #b331641a;backdrop-filter:blur(12px);animation:rise .9s ease both}
+    .eyebrow{display:inline-block;padding:7px 12px;border-radius:999px;background:#fff;color:var(--hot);font-size:11px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase}
+    .big-heart{font-size:55px;display:block;margin:17px 0 7px;filter:drop-shadow(0 9px 15px #ef4b862b);animation:float 3s ease-in-out infinite}
+    h1,h2,h3{font-family:"Playfair Display",serif}
+    h1{font-size:clamp(2.65rem,11vw,5.3rem);line-height:1.02;margin:8px 0 14px;color:#b52b62}
+    h1 span{display:block;color:#f04f8b;font-style:italic}
+    .hero p{max-width:480px;margin:0 auto;color:#8d5d72;line-height:1.75;font-size:15px}
+    .primary{border:0;background:linear-gradient(135deg,#ff76a4,#eb3d7b);color:white;padding:15px 22px;border-radius:999px;font-weight:800;box-shadow:0 10px 24px #e84a852e;transition:transform .2s,box-shadow .2s}
+    .primary:active{transform:scale(.97)}
+    .hero .primary{margin-top:24px;animation:pulse 2.6s infinite}
+    .hint{font-size:12px!important;margin-top:13px!important;color:#a77b8d!important}
+    section{padding:22px 0 34px;scroll-margin-top:20px}
+    .section-head{text-align:center;margin-bottom:18px}
+    .section-head .mini{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#d34b7e;font-weight:800}
+    h2{font-size:clamp(1.8rem,7vw,2.6rem);margin:7px 0;color:#a52c5c}
+    .section-head p{font-size:14px;line-height:1.7;color:var(--muted);margin:0 auto;max-width:480px}
+    .panel{background:var(--glass);border:1px solid #fff;border-radius:25px;padding:23px 20px;box-shadow:0 14px 40px #b3316412}
+    .letter{font-family:"Playfair Display",serif;font-size:17px;line-height:1.9;color:#704056;white-space:pre-line}
+    .signature{font-family:"Playfair Display",serif;color:#d33e79;font-size:21px;font-style:italic;margin-top:16px}
+    .timeline{display:grid;gap:13px}
+    .memory{display:flex;gap:13px;align-items:flex-start;padding:16px;background:#ffffffbd;border:1px solid #fff;border-radius:20px}
+    .memory-icon{flex:0 0 42px;height:42px;display:grid;place-items:center;background:#ffe0eb;border-radius:15px;font-size:21px}
+    .memory h3{margin:1px 0 5px;font-size:18px;color:#a52c5c}
+    .memory p{margin:0;color:#916779;font-size:13px;line-height:1.65}
+    .photo-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+    .photo{aspect-ratio:4/5;border:2px dashed #ed91b4;border-radius:20px;background:linear-gradient(145deg,#fff8fb,#ffdce9);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:13px;color:#bd4e7a;overflow:hidden;position:relative}
+    .photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:none}
+    .photo .ph-emoji{font-size:34px;margin-bottom:9px}
+    .photo strong{font-size:13px}
+    .photo small{font-size:11px;line-height:1.5;margin-top:6px;color:#a86d85}
+    .photo input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer}
+    .photo.has-image{border:2px solid #fff;box-shadow:0 8px 25px #a52c5c18}
+    .photo.has-image img{display:block}
+    .photo.has-image .photo-label{display:none}
+    .secret-box{text-align:center;background:linear-gradient(145deg,#fff,#ffe8f1)}
+    .secret-content{display:none;margin-top:16px;padding:17px;border-radius:18px;background:#fff7fa;color:#8b3a5b;line-height:1.8}
+    .secret-content.show{display:block;animation:rise .5s ease}
+    .secret-content .secret-heart{font-size:35px}
+    .countdown{display:flex;gap:9px;justify-content:center;margin:22px 0 2px}
+    .timebox{min-width:68px;padding:12px 7px;background:#fff;border:1px solid #fff;border-radius:16px;box-shadow:0 7px 20px #b3316410}
+    .timebox strong{display:block;font-size:23px;color:#d83c78}
+    .timebox span{font-size:10px;text-transform:uppercase;letter-spacing:1px;color:#a37589}
+    .surprise{text-align:center;background:linear-gradient(135deg,#f75b92,#d72f70);color:white;overflow:hidden;position:relative}
+    .surprise h2{color:white}
+    .surprise p{color:#fff0f6;line-height:1.7;font-size:14px}
+    .surprise .primary{background:white;color:#c52d67;box-shadow:none}
+    .reveal{display:none;font-family:"Playfair Display",serif;font-size:22px;line-height:1.6;margin:20px 0 0;color:white}
+    .reveal.show{display:block;animation:rise .6s ease}
+    footer{text-align:center;padding:25px 0 38px;color:#9b6a80;font-size:12px;line-height:1.8}
+    .tiny-heart{color:#ed4b87}
+    .toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);z-index:5;background:#5e2942;color:white;padding:11px 16px;border-radius:999px;font-size:12px;display:none;max-width:90%;text-align:center}
+    .toast.show{display:block;animation:rise .3s ease}
+    @media(min-width:600px){.hero-card{padding:48px 40px}.panel{padding:30px}.photo-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.timeline{grid-template-columns:1fr 1fr}.hero{min-height:78vh}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
+  </style>
+</head>
+<body>
+  <div class="petals" id="petals" aria-hidden="true"></div>
+  <div class="wrap">
+    <header class="topbar">
+      <div class="brand">for PRUSHTI <span class="tiny-heart">♥</span></div>
+      <button class="music-btn" id="musicBtn" type="button">♫ Play our music</button>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="hero-card">
+          <span class="eyebrow">A little world made for you</span>
+          <span class="big-heart" aria-hidden="true">💗</span>
+          <h1>Happy Birthday,<span>Prushti!</span></h1>
+          <p>Today is all about your smile, your beautiful heart, and the happiness you bring into my world. I made this little surprise just for you.</p>
+          <div class="countdown" id="countdown" aria-label="Birthday countdown">
+            <div class="timebox"><strong id="days">00</strong><span>Days</span></div>
+            <div class="timebox"><strong id="hours">00</strong><span>Hours</span></div>
+            <div class="timebox"><strong id="mins">00</strong><span>Minutes</span></div>
+            <div class="timebox"><strong id="secs">00</strong><span>Seconds</span></div>
+          </div>
+          <button class="primary" type="button" onclick="document.querySelector('#letter').scrollIntoView({behavior:'smooth'})">Open your little love letter 💌</button>
+          <p class="hint">Made with love, especially for you.</p>
+        </div>
+      </section>
+
+      <section id="letter">
+        <div class="section-head"><div class="mini">From my heart</div><h2>A letter for you 💌</h2><p>Some feelings deserve more than a simple “Happy Birthday.”</p></div>
+        <div class="panel">
+          <div class="letter">My dearest Prushti,
+
+Happy Birthday, my love! 💗
+
+I hope this new year of your life brings you endless smiles, peaceful days, beautiful surprises, and all the happiness your heart can hold. You deserve to feel loved, appreciated, and special—not only today, but every single day.
+
+Your smile can make an ordinary moment feel magical, and having you in my life means more to me than I can fully explain. I may not always find the perfect words, but I hope my actions keep showing you how much you mean to me.
+
+Keep shining, keep dreaming, and never forget how wonderfully special you are. Whatever this new chapter brings, I’ll always be cheering for your happiness.
+
+Today, I wish I could wrap all my love into one big hug and give it to you. Until then, let this little website remind you that someone is thinking of you with a full heart.
+
+Happy Birthday once again, my princess. May your wishes come true, one by one. 🎂✨</div>
+          <div class="signature">Always with love, ❤️</div>
+          <p style="font-size:11px;color:#a77b8d;margin:8px 0 0">Tip: You can edit this letter in <code>index.html</code> to add your own personal memories or signature.</p>
+        </div>
+      </section>
+
+      <section id="story">
+        <div class="section-head"><div class="mini">Little things, big feelings</div><h2>Our story together 🌷</h2><p>Every love story is made of tiny moments. Here are a few spaces for yours.</p></div>
+        <div class="timeline">
+          <article class="memory"><div class="memory-icon">✨</div><div><h3>The beginning</h3><p>The moment our story began, a new collection of memories started too. Add the date or place where it all started.</p></div></article>
+          <article class="memory"><div class="memory-icon">😊</div><div><h3>Your smile</h3><p>One of my favourite things will always be seeing you happy. Your smile makes even simple days feel special.</p></div></article>
+          <article class="memory"><div class="memory-icon">🫶</div><div><h3>Our little moments</h3><p>Our conversations, jokes, and ordinary moments are the ones I want to keep close to my heart.</p></div></article>
+          <article class="memory"><div class="memory-icon">🌙</div><div><h3>More memories ahead</h3><p>This is only one chapter. I hope life gives us many more reasons to laugh, grow, and celebrate together.</p></div></article>
+        </div>
+      </section>
+
+      <section id="gallery">
+        <div class="section-head"><div class="mini">Our favourite snapshots</div><h2>Little memories 📸</h2><p>Tap a frame to add a photo from your phone. Photos stay in your browser and aren't uploaded anywhere.</p></div>
+        <div class="photo-grid">
+          <label class="photo"><img alt="Your first memory"><span class="photo-label"><span class="ph-emoji">🌸</span><strong>Our first memory</strong><small>Tap to add a photo</small></span><input type="file" accept="image/*" aria-label="Add our first memory photo"></label>
+          <label class="photo"><img alt="A favourite picture"><span class="photo-label"><span class="ph-emoji">💞</span><strong>Your favourite picture</strong><small>Tap to add a photo</small></span><input type="file" accept="image/*" aria-label="Add favourite picture"></label>
+          <label class="photo"><img alt="A happy moment"><span class="photo-label"><span class="ph-emoji">🌷</span><strong>A happy moment</strong><small>Tap to add a photo</small></span><input type="file" accept="image/*" aria-label="Add happy moment photo"></label>
+          <label class="photo"><img alt="A silly memory"><span class="photo-label"><span class="ph-emoji">🥹</span><strong>Our silly moment</strong><small>Tap to add a photo</small></span><input type="file" accept="image/*" aria-label="Add silly memory photo"></label>
+          <label class="photo"><img alt="A special day"><span class="photo-label"><span class="ph-emoji">🎀</span><strong>A special day</strong><small>Tap to add a photo</small></span><input type="file" accept="image/*" aria-label="Add special day photo"></label>
+          <label class="photo"><img alt="More memories"><span class="photo-label"><span class="ph-emoji">💗</span><strong>One more memory</strong><small>Tap to add a photo</small></span><input type="file" accept="image/*" aria-label="Add another memory photo"></label>
+        </div>
+      </section>
+
+      <section id="secret">
+        <div class="section-head"><div class="mini">Just between us</div><h2>A tiny secret 🤫</h2><p>There's one more message waiting for you.</p></div>
+        <div class="panel secret-box">
+          <div style="font-size:40px">🎁</div>
+          <p style="color:#8f5d73;line-height:1.7;font-size:14px">Ready for your little surprise, birthday girl?</p>
+          <button class="primary" id="secretBtn" type="button">Unlock my secret message 💗</button>
+          <div class="secret-content" id="secretContent"><div class="secret-heart">💖</div><strong>Prushti, here's my secret:</strong><br>Out of all the little things life gives us, I’m especially grateful for the chance to know you, love you, and celebrate you. Never underestimate how much your presence can brighten a day. You are precious, you are loved, and you deserve beautiful things—always.</div>
+        </div>
+      </section>
+
+      <section id="surprise">
+        <div class="panel surprise">
+          <div style="font-size:38px">🎂✨💝</div>
+          <h2>One last birthday surprise</h2>
+          <p>Take a deep breath, make a wish, and tap below.</p>
+          <button class="primary" id="surpriseBtn" type="button">Make a wish, Prushti! 🌟</button>
+          <div class="reveal" id="reveal">May your life be as lovely as your heart,<br>your days as bright as your smile,<br>and your dreams closer with every step.<br><br>Happy Birthday, my love! 💗🎉</div>
+        </div>
+      </section>
+    </main>
+    <footer>Designed with <span class="tiny-heart">♥</span> for PRUSHTI<br>May your birthday be full of love, laughter, and magic.</footer>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <audio id="music" loop preload="none"></audio>
+  <script>
+    // Birthday date: 13 October 2026. Countdown uses the visitor's local time.
+    const birthday = new Date(2026, 9, 13, 0, 0, 0);
+    const countdown = document.getElementById('countdown');
+    function updateCountdown(){
+      const now = new Date();
+      let target = birthday;
+      if(now >= birthday){ countdown.innerHTML = '<div class="timebox" style="padding:14px 20px"><strong>🎉</strong><span>It’s your day!</span></div>'; return; }
+      const diff = target - now;
+      document.getElementById('days').textContent = String(Math.floor(diff/86400000)).padStart(2,'0');
+      document.getElementById('hours').textContent = String(Math.floor(diff%86400000/3600000)).padStart(2,'0');
+      document.getElementById('mins').textContent = String(Math.floor(diff%3600000/60000)).padStart(2,'0');
+      document.getElementById('secs').textContent = String(Math.floor(diff%60000/1000)).padStart(2,'0');
+    }
+    updateCountdown(); setInterval(updateCountdown,1000);
+
+    // Soft floating hearts/petals.
+    const petals = document.getElementById('petals');
+    const symbols = ['♡','♥','✿','💗','✧'];
+    for(let i=0;i<22;i++){
+      const el=document.createElement('span'); el.className='petal'; el.textContent=symbols[i%symbols.length];
+      el.style.left=(Math.random()*100)+'%'; el.style.animationDuration=(9+Math.random()*12)+'s';
+      el.style.animationDelay=(-Math.random()*18)+'s'; el.style.setProperty('--drift',((Math.random()*120)-60)+'px');
+      el.style.fontSize=(12+Math.random()*14)+'px'; petals.appendChild(el);
+    }
+
+    // Photo previews are local to the device/browser; nothing is uploaded.
+    document.querySelectorAll('.photo input').forEach(input=>{
+      input.addEventListener('change',()=>{
+        const file=input.files && input.files[0]; if(!file) return;
+        if(!file.type.startsWith('image/')) return;
+        const card=input.closest('.photo'); const img=card.querySelector('img');
+        img.src=URL.createObjectURL(file); card.classList.add('has-image');
+      });
+    });
+
+    const secretBtn=document.getElementById('secretBtn');
+    secretBtn.addEventListener('click',()=>{
+      const box=document.getElementById('secretContent'); box.classList.toggle('show');
+      secretBtn.textContent=box.classList.contains('show')?'Hide my secret 💌':'Unlock my secret message 💗';
+    });
+    document.getElementById('surpriseBtn').addEventListener('click',()=>{
+      document.getElementById('reveal').classList.add('show');
+      burstHearts();
+      document.getElementById('surpriseBtn').textContent='Wish sent to the universe ✨';
+    });
+    function burstHearts(){
+      for(let i=0;i<18;i++){
+        const el=document.createElement('span'); el.textContent=['💗','💖','💕','✨'][i%4];
+        Object.assign(el.style,{position:'fixed',left:(35+Math.random()*30)+'%',top:(40+Math.random()*20)+'%',zIndex:8,pointerEvents:'none',fontSize:(16+Math.random()*16)+'px',transition:'all 1.6s ease',opacity:'1'});
+        document.body.appendChild(el);
+        requestAnimationFrame(()=>{el.style.transform=`translate(${(Math.random()*360-180)}px, ${(-100-Math.random()*260)}px) rotate(${Math.random()*180}deg)`;el.style.opacity='0'});
+        setTimeout(()=>el.remove(),1700);
+      }
+    }
+
+    // Optional background music: add a licensed MP3 named assets/music.mp3.
+    const audio=document.getElementById('music'); const musicBtn=document.getElementById('musicBtn');
+    audio.src='assets/music.mp3';
+    musicBtn.addEventListener('click',async()=>{
+      if(audio.paused){
+        try{await audio.play();musicBtn.textContent='♫ Pause music';}
+        catch(e){showToast('Add your chosen MP3 as assets/music.mp3, then reopen the website.');}
+      }else{audio.pause();musicBtn.textContent='♫ Play our music';}
+    });
+    function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),3600);}
+  </script>
+</body>
+</html>
