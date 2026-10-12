@@ -154,7 +154,7 @@ Happy Birthday once again, my princess. May your wishes come true, one by one. �
         </div>
       </section>
 
-      <section id="gallery">
+<section id="gallery">
   <div class="section-head">
     <div class="mini">Our favourite snapshots</div>
     <h2>Little memories 📸</h2>
@@ -163,56 +163,80 @@ Happy Birthday once again, my princess. May your wishes come true, one by one. �
 
   <div class="photo-grid">
 
-    <div class="photo has-image">
-      <img src="photo1.jpg.jpg" alt="Our first memory">
+    <label class="photo">
+      <img src="./photo1.jpg.jpg" alt="Our first memory"
+           onerror="this.style.display='none'">
       <span class="photo-label">
         <span class="ph-emoji">🌸</span>
         <strong>Our first memory</strong>
+        <small>Tap to add or change photo</small>
       </span>
-    </div>
+      <input type="file" accept="image/*"
+             aria-label="Add first memory photo">
+    </label>
 
-    <div class="photo has-image">
-      <img src="photo2.jpg.jpg" alt="A favourite picture">
+    <label class="photo">
+      <img src="./photo2.jpg.jpg" alt="Favourite picture"
+           onerror="this.style.display='none'">
       <span class="photo-label">
         <span class="ph-emoji">💞</span>
         <strong>Your favourite picture</strong>
+        <small>Tap to add or change photo</small>
       </span>
-    </div>
+      <input type="file" accept="image/*"
+             aria-label="Add favourite picture">
+    </label>
 
-    <div class="photo has-image">
-      <img src="photo3.jpg.jpg" alt="A happy moment">
+    <label class="photo">
+      <img src="./photo3.jpg.jpg" alt="Happy moment"
+           onerror="this.style.display='none'">
       <span class="photo-label">
         <span class="ph-emoji">🌷</span>
         <strong>A happy moment</strong>
+        <small>Tap to add or change photo</small>
       </span>
-    </div>
+      <input type="file" accept="image/*"
+             aria-label="Add happy moment">
+    </label>
 
-    <div class="photo has-image">
-      <img src="photo4.jpg.jpg" alt="A silly memory">
+    <label class="photo">
+      <img src="./photo4.jpg.jpg" alt="Silly memory"
+           onerror="this.style.display='none'">
       <span class="photo-label">
         <span class="ph-emoji">🥹</span>
         <strong>Our silly moment</strong>
+        <small>Tap to add or change photo</small>
       </span>
-    </div>
+      <input type="file" accept="image/*"
+             aria-label="Add silly memory">
+    </label>
 
-    <div class="photo has-image">
-      <img src="photo5.jpg.jpg" alt="A special day">
+    <label class="photo">
+      <img src="./photo5.jpg.jpg" alt="Special day"
+           onerror="this.style.display='none'">
       <span class="photo-label">
         <span class="ph-emoji">🎀</span>
         <strong>A special day</strong>
+        <small>Tap to add or change photo</small>
       </span>
-    </div>
+      <input type="file" accept="image/*"
+             aria-label="Add special day photo">
+    </label>
 
-    <div class="photo has-image">
-      <img src="photo6.jpg.jpg" alt="More memories">
+    <label class="photo">
+      <img src="./photo6.jpg.jpg" alt="More memories"
+           onerror="this.style.display='none'">
       <span class="photo-label">
         <span class="ph-emoji">💗</span>
         <strong>One more memory</strong>
+        <small>Tap to add or change photo</small>
       </span>
-    </div>
+      <input type="file" accept="image/*"
+             aria-label="Add another memory">
+    </label>
 
   </div>
-      </section>
+</section>
 
       <section id="secret">
         <div class="section-head"><div class="mini">Just between us</div><h2>A tiny secret 🤫</h2><p>There's one more message waiting for you.</p></div>
