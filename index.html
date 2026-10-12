@@ -243,5 +243,18 @@ Happy Birthday once again, my princess. May your wishes come true, one by one. �
     });
     function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),3600);}
   </script>
+  
+<audio id="birthdayMusic" loop>
+  <source src="birthday.mp3" type="audio/mpeg">
+</audio>
+
+<button onclick="document.getElementById('birthdayMusic').play()">
+  🎵 Play Birthday Song ❤️
+</button>
+
+<button onclick="document.getElementById('birthdayMusic').pause()">
+  ⏸ Pause Music
+</button>
+  
 </body>
 </html>
